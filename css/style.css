@@ -1,0 +1,17 @@
+body {
+    margin-top: 10%;
+    background-image: url(img/background/tileable_wood_texture.png);
+}
+
+img {
+    height: auto;
+    max-width: 100% !important;
+}
+
+h2 {
+    padding: 10px 0 10px 0;
+}
+
+#wrap {
+    padding-top: 50px;
+}
