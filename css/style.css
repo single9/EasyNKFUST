@@ -15,6 +15,10 @@ h2 {
     padding-top: 50px;
 }
 
-footer a:hover {
+footer a {
     color: #333;
+}
+
+footer a:hover {
+    color: #666;
 }
