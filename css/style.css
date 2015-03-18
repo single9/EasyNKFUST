@@ -1,5 +1,4 @@
 body {
-    margin-top: 10%;
     background-image: url(img/background/tileable_wood_texture.png);
 }
 
@@ -14,4 +13,8 @@ h2 {
 
 #wrap {
     padding-top: 50px;
+}
+
+footer a:hover {
+    color: #333;
 }
