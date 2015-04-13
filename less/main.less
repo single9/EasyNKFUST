@@ -1,15 +1,58 @@
 @baseColor: #EFEFEF;
 @images: "../imgs";
 @bg: rgba(10, 10, 10, 0.5);
-
-
 body {
     color: @baseColor;
     margin: 0;
+    line-height: 1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    line-height: 52.5px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    line-height: 42px;
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    line-height: 35.994px;
+    font-size: 23.996px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h4 {
+    line-height: 31.5px;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h5 {
+    line-height: 27.006px;
+    font-size: 18.004px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h6 {
+    line-height: 22.512px;
+    font-size: 15.008px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 5px
 }
 
 a {
-    color: @baseColor;
+    color: @baseColor * 0.98;
     text-decoration: none;
 }
 
@@ -26,19 +69,18 @@ a:hover {
     text-align: center;
 }
 
-#wrap {
-}
+#wrap {}
 
 .border-radius(@radius) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
 }
 
 .brightness-alpha(@bright, @a) {
     -webkit-filter: brightness(@bright) opacity(@a);
-       -moz-filter: brightness(@bright) opacity(@a);
-            filter: brightness(@bright) opacity(@a);
+    -moz-filter: brightness(@bright) opacity(@a);
+    filter: brightness(@bright) opacity(@a);
 }
 
 #bg {
@@ -60,19 +102,17 @@ a:hover {
         padding: 10px 5px 10px 15px;
         width: 200px;
         background: @bg;
-        @media (max-width: 767px) {
-            
-        }
-        
+        @media (max-width: 767px) {}
     }
 }
 
 footer {
-    position:fixed;
+    font-size: 13px;
+    position: fixed;
     padding-top: 10px;
-    left:0px;
-    bottom:0px;
-    height:30px;
-    width:100%;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    width: 100%;
     background: @bg;
 }
