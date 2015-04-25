@@ -1,53 +1,53 @@
 @baseColor: #EFEFEF;
 @images: "../imgs";
 @bg: rgba(10, 10, 10, 0.5);
+@basic-fonts: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 body {
     color: @baseColor;
     margin: 0;
     line-height: 1;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: @basic-fonts;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: @basic-fonts;
 }
 
 h1 {
     line-height: 52.5px;
     font-size: 35px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h2 {
     line-height: 42px;
     font-size: 28px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h3 {
     line-height: 35.994px;
     font-size: 23.996px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h4 {
     line-height: 31.5px;
     font-size: 21px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h5 {
     line-height: 27.006px;
     font-size: 18.004px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h6 {
     line-height: 22.512px;
     font-size: 15.008px;
     font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-bottom: 5px
 }
 
@@ -86,7 +86,7 @@ a:hover {
 #bg {
     .brightness-alpha(0.8, 0.8);
     position: fixed;
-    background: url("@{images}/bg.jpg");
+    background: url("@{images}/bg.jpg") no-repeat center center fixed ;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -102,7 +102,9 @@ a:hover {
         padding: 10px 5px 10px 15px;
         width: 200px;
         background: @bg;
-        @media (max-width: 767px) {}
+        @media (max-width: 767px) {
+            margin-top: 100px;
+        }
     }
 }
 
