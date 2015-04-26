@@ -13,15 +13,9 @@
 網站傳送門：http://single9.github.io/easynkfust/
 
 ## 使用技術
-### Kule CSS
 
-由台灣一位設計師所釋出的一個 CSS 框架，小巧好用。
-
-採用技術：
-
+- Less
 - CSS 3
 - HTML 5
-- jQurery
-- jQueryUI
-
-Kule CSS 傳送門：http://www.kule.tw/
+- JavaScript
+- jQuery
