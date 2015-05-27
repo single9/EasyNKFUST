@@ -14,42 +14,37 @@ body {
 
 h1, h2, h3, h4, h5 {
     font-family: @basic-fonts;
+    font-weight: bold;
 }
 
 h1 {
     line-height: 52.5px;
     font-size: @basic-font-size * 2.5;
-    font-weight: bold;
 }
 
 h2 {
     line-height: 42px;
     font-size: @basic-font-size * 2;
-    font-weight: bold;
 }
 
 h3 {
     line-height: 35.994px;
     font-size: @basic-font-size * 1.8;
-    font-weight: bold;
 }
 
 h4 {
     line-height: 31.5px;
     font-size: @basic-font-size * 1.6;
-    font-weight: bold;
 }
 
 h5 {
     line-height: 27.006px;
     font-size: @basic-font-size * 1.4;
-    font-weight: bold;
 }
 
 h6 {
     line-height: 22.512px;
     font-size: @basic-font-size * 1.2;
-    font-weight: bold;
     margin-bottom: 5px;
 }
 
@@ -64,7 +59,7 @@ a:hover {
 
 .btn {
     display: block;
-    padding: 5px 1px 5px 1px;
+    padding: 5px 1px 5px 15px;
 }
 
 .text-center {
@@ -97,6 +92,13 @@ a:hover {
 
 .menu {
     .border-radius(5px);
+
+    a:hover {
+        color: @baseColor * 1.5;
+        padding: 10px 0 10px 5px;
+        background: rgba(10, 10, 10, 0.7);
+    }
+
     @media screen {
         float: left;
         margin-top: 20%;
@@ -130,4 +132,12 @@ footer {
     height: 30px;
     width: 100%;
     background: @bg;
+
+    @media screen {
+        @media (max-width: 767px) {
+            top: 0px;
+            bottom: auto;
+            position: fixed;
+        }
+    }
 }
