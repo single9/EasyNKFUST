@@ -2,12 +2,14 @@
 @images: "../imgs";
 @bg: rgba(10, 10, 10, 0.5);
 @basic-fonts: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@basic-font-size: 18px;
 
 body {
     color: @baseColor;
     margin: 0;
     line-height: 1;
     font-family: @basic-fonts;
+    font-size: @basic-font-size;
 }
 
 h1, h2, h3, h4, h5 {
@@ -16,39 +18,39 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     line-height: 52.5px;
-    font-size: 35px;
+    font-size: @basic-font-size * 2.5;
     font-weight: bold;
 }
 
 h2 {
     line-height: 42px;
-    font-size: 28px;
+    font-size: @basic-font-size * 2;
     font-weight: bold;
 }
 
 h3 {
     line-height: 35.994px;
-    font-size: 23.996px;
+    font-size: @basic-font-size * 1.8;
     font-weight: bold;
 }
 
 h4 {
     line-height: 31.5px;
-    font-size: 21px;
+    font-size: @basic-font-size * 1.6;
     font-weight: bold;
 }
 
 h5 {
     line-height: 27.006px;
-    font-size: 18.004px;
+    font-size: @basic-font-size * 1.4;
     font-weight: bold;
 }
 
 h6 {
     line-height: 22.512px;
-    font-size: 15.008px;
+    font-size: @basic-font-size * 1.2;
     font-weight: bold;
-    margin-bottom: 5px
+    margin-bottom: 5px;
 }
 
 a {
@@ -102,8 +104,18 @@ a:hover {
         padding: 10px 5px 10px 15px;
         width: 200px;
         background: @bg;
+
         @media (max-width: 767px) {
             margin-top: 100px;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 75%;
+            h3 {
+                font-size: 30px;
+            }
+            .btn {
+                font-size: 22px;
+            }
         }
     }
 }
