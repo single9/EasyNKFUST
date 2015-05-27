@@ -95,14 +95,15 @@ a:hover {
     z-index: -1;
 }
 
-#menu {
+.menu {
     .border-radius(5px);
     @media screen {
         float: left;
         margin-top: 20%;
         margin-left: 1.5em;
+        margin-right: auto;
         padding: 10px 5px 10px 15px;
-        width: 200px;
+        width: 40%;
         background: @bg;
 
         @media (max-width: 767px) {
@@ -111,10 +112,10 @@ a:hover {
             margin-right: 10%;
             width: 75%;
             h3 {
-                font-size: 30px;
+                font-size: @basic-font-size * 1.4;
             }
             .btn {
-                font-size: 22px;
+                font-size: @basic-font-size * 1.1;
             }
         }
     }
