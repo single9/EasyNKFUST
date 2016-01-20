@@ -6,6 +6,7 @@
 
 body {
     color: @baseColor;
+    background: #000;
     margin: 0;
     line-height: 1;
     font-family: @basic-fonts;
@@ -87,7 +88,7 @@ a:hover {
         &:hover {
             background: rgba(0, 0, 0, 1.0);
             .border-radius(5px);
-            .background-transition(1.3s, ease);
+            .background-transition(3s, ease);
         }
 
         &.drop-down-menu {
@@ -230,12 +231,26 @@ a:hover {
 
 .menu {
     .border-radius(5px);
+    .background-transition(0.5s, linear);
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.65);
+        .background-transition(1.3s, ease);
+    }
+
+    a {
+        .background-transition(0.3s, ease);
+        .border-radius(5px);
+    }
 
     a:hover {
         color: @baseColor * 1.5;
         padding: 10px 0 10px 5px;
-        background: rgba(10, 10, 10, 0.7);
+        background: rgba(10, 10, 10, 0.85);
         .border-radius(5px);
+        .background-transition(1s, linear);
+        -webkit-transition: padding 0.3s; /* Safari */
+        transition: padding 0.3s;
     }
 
     @media screen {

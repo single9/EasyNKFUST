@@ -53,34 +53,66 @@
                 <a class="btn" href="http://aais12.nkfust.edu.tw/sem_score/">成績查詢</a>
                 <a class="btn" href="http://aais15.nkfust.edu.tw/wlabor/">服務學習與兼任助理申請系統（學習型）</a>
             </div>
-            <div id="search" class="menu border-radius">
-                <h3>校內搜尋</h3>
-                <script>
-                  (function() {
-                    var cx = '017700507265037214494:xcdixhyfcxq';
-                    var gcse = document.createElement('script');
-                    gcse.type = 'text/javascript';
-                    gcse.async = true;
-                    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-                        '//cse.google.com/cse.js?cx=' + cx;
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(gcse, s);
-                  })();
-                </script>
-                <gcse:search></gcse:search>
-                <style>
-                    .gsc-control-cse {
-                        background: none;
-                        border: none;
-                    }
-                    .gsc-results-wrapper-overlay {
-                        color: #666;
-                        background: rgba(230, 230, 230, 0.8);
-                    }
-                </style>
-            </div>
+                <div id="news" class="menu border-radius">
+                    <h3>最新消息</h3>
+                </div>
+                <div id="search" class="menu border-radius">
+                    <h3>校內搜尋</h3>
+                    <script>
+                      (function() {
+                        var cx = '017700507265037214494:xcdixhyfcxq';
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                            '//cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                    <style>
+                        .gsc-control-cse {
+                            background: none;
+                            border: none;
+                        }
+                        .gsc-results-wrapper-overlay {
+                            color: #666;
+                            background: rgba(230, 230, 230, 0.8);
+                        }
+                    </style>
+                </div>
             </div>
             <footer class="text-center"><a href="">EasyNKFUST</a> &#8226; <a href="https://github.com/single9/EasyNKFUST">GitHub</a> &#8226; <a href="http://single9.net/">Single.9</a> &#8226; <a href="https://www.dcard.tw">Dcard</a></footer>
     </div>
+    <script>
+        $.ajax({
+            url: 'http://163.18.104.6:9012/get/news',
+            type: 'get',
+            success: function(data) {
+                var list = JSON.parse(data);
+                var count = 0;
+                $.each(list, function() {
+                    var title = this.title;
+                    var url = this.url;
+                    var d = '<a class="btn" href=\"' + url + '\">' + title + '</a>';
+                    $("#news").append(d);
+                    count++;
+                    if (count > 5)
+                        return false;
+                });
+            }
+        });
+        var bgs = ['http://enews.nkfust.edu.tw/images/images/262.jpg")', "http://english.nkfust.edu.tw/ezfiles/58/1058/img/1262/170958014.jpg", "./imgs/library.jpg"];
+
+        setInterval(function(){
+            var x = Math.floor((Math.random() * bgs.length));
+            $("#bg").animate({opacity: 0}, 'slow', function() {
+        $(this)
+            .css({'background': 'url(' + bgs[x] + ')' + " no-repeat center center fixed"})
+            .animate({opacity: 1});
+            });
+        }, 30000);
+    </script>
     </body>
 </html>
