@@ -1,9 +1,11 @@
 @baseColor: #EFEFEF;
 @images: "../imgs";
 @bg: rgba(10, 10, 10, 0.5);
-@basic-fonts: "Helvetica Neue", Helvetica, Arial, sans-serif;
+@basic-fonts: "Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
 @basic-font-size: 18px;
-
 body {
     color: @baseColor;
     background: #000;
@@ -13,7 +15,12 @@ body {
     font-size: @basic-font-size;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
+    padding-bottom: 5px;
     font-family: @basic-fonts;
     font-weight: bold;
 }
@@ -67,8 +74,11 @@ a:hover {
     text-align: center;
 }
 
-#nav-wrap {
-    min-height: 100vh;
+.wrap {
+    padding-top: 100px;
+    @media (max-width: 767px) {
+        padding-top: 0px;
+    }
 }
 
 .nav-top {
@@ -78,44 +88,33 @@ a:hover {
     position: fixed;
     text-decoration: none;
     background: rgba(0, 0, 0, 0.3);
-
+    .background-transition(0.5s, linear);
     .border-radius(5px);
-
+    &:hover {
+        background: rgba(0, 0, 0, 1.0);
+        .background-transition(3s, ease);
+    }
     ul {
         margin: 0 auto;
-        .background-transition(0.5s, linear);
-
-        &:hover {
-            background: rgba(0, 0, 0, 1.0);
-            .border-radius(5px);
-            .background-transition(3s, ease);
-        }
-
         &.drop-down-menu {
             display: inline-block;
-
             li {
                 position: relative;
                 white-space: nowrap;
             }
-
             & > li:last-child {
                 ul li {
                     min-width: inherit;
                 }
             }
-
-            & > li {
-
-            }
-
-            ul { /*隱藏次選單*/
+            & > li {}
+            ul {
+                /*隱藏次選單*/
                 left: 99999px;
                 opacity: 0;
                 -webkit-transition: opacity 0.3s;
                 transition: opacity 0.3s;
             }
-
             li:hover > ul {
                 /* 滑鼠滑入展開次選單*/
                 opacity: 1;
@@ -124,35 +123,28 @@ a:hover {
                 left: -1px;
                 border-right: 5px;
             }
-
             li:hover > ul ul {
-                 /* 滑鼠滑入之後、次選單之後的選單依舊隱藏*/
+                /* 滑鼠滑入之後、次選單之後的選單依舊隱藏*/
                 left: 99999px;
             }
-
             ul {
                 position: absolute;
                 z-index: 99;
                 background: rgba(0, 0, 0, 1.0);
-
                 .border-radius-bottom-left(5px);
                 .border-radius-bottom-right(5px);
-
                 li {
                     display: block;
                     min-width: 100px;
-
                     a {
                         min-width: inherit;
                     }
                 }
-
                 li:hover > ul {
                     /* 第二層之後的選單展開位置*/
                     left: 50%;
                     .border-radius(5px);
                 }
-
                 ul {
                     /*第三層以後的選單出現位置與第二層不同*/
                     z-index: 999;
@@ -163,30 +155,26 @@ a:hover {
             }
         }
     }
-
     ul li {
         list-style: none;
         display: inline-block;
     }
-
     a {
         padding: 5px 15px 5px 15px;
         display: inline-block;
     }
-
     a:hover {
         color: @baseColor * 1.5;
         background: rgba(10, 10, 10, 0.7);
         .border-radius(5px);
     }
-
     @media (max-width: 767px) {
-            position: relative;
-            top: 0;
-            margin-left: 0;
-            margin-right: 0;
-            .border-radius(0px);
-        }
+        position: relative;
+        top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        .border-radius(0px);
+    }
 }
 
 .background-transition(@duration, @timing-function) {
@@ -222,7 +210,7 @@ a:hover {
 #bg {
     .brightness-alpha(0.8, 0.8);
     position: fixed;
-    background: url("http://enews.nkfust.edu.tw/images/images/262.jpg") no-repeat center center fixed ;
+    background: url("http://enews.nkfust.edu.tw/images/images/262.jpg") no-repeat center center fixed;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -231,39 +219,39 @@ a:hover {
 
 .menu {
     .border-radius(5px);
-    .background-transition(0.5s, linear);
-
+    .background-transition(0.5s,
+    linear);
     &:hover {
         background: rgba(0, 0, 0, 0.65);
-        .background-transition(1.3s, ease);
+        .background-transition(1.3s,
+        ease);
     }
-
     a {
-        .background-transition(0.3s, ease);
+        .background-transition(0.3s,
+        ease);
         .border-radius(5px);
     }
-
     a:hover {
         color: @baseColor * 1.5;
         padding: 10px 0 10px 5px;
         background: rgba(10, 10, 10, 0.85);
         .border-radius(5px);
-        .background-transition(1s, linear);
-        -webkit-transition: padding 0.3s; /* Safari */
+        .background-transition(1s,
+        linear);
+        -webkit-transition: padding 0.3s;
+        /* Safari */
         transition: padding 0.3s;
     }
-
     @media screen {
         float: left;
-        margin-top: 100px;
+        margin-top: 10px;
         margin-left: 5%;
         margin-right: auto;
         padding: 10px 5px 10px 15px;
         width: 38%;
         background: @bg;
-
         @media (max-width: 767px) {
-            margin-top: 10%;
+            margin-top: 50px;
             margin-left: 10%;
             margin-right: 10%;
             width: 75%;
@@ -277,6 +265,29 @@ a:hover {
     }
 }
 
+.square {
+    @padding: 30px 5px 30px 5px;
+    display: inline-block;
+    width: 100px;
+    padding: @padding;
+    text-align: center;
+    word-break: break-all;
+    a {
+        padding: @padding;
+        background: rgba(20, 20, 150, 0.35);
+    }
+    a:hover {
+        color: @baseColor * 1.5;
+        padding: @padding;
+        background: rgba(20, 20, 150, 0.85);
+        .border-radius(5px);
+        .background-transition(1s,
+        linear);
+
+    }
+}
+
+
 footer {
     font-size: 13px;
     position: fixed;
@@ -286,7 +297,6 @@ footer {
     height: 30px;
     width: 100%;
     background: @bg;
-
     @media screen {
         @media (max-width: 767px) {
             top: 20px;
